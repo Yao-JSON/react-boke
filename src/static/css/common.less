@@ -1,0 +1,24 @@
+html,body {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+}
+.rt{
+	float: right;
+}
+.lt{
+	float: left;
+}
+.clear{
+	&:before,&:after{
+		display: block;
+		clear: both;
+		content: ' ';
+	}
+}
+
+
