@@ -1,6 +1,6 @@
 import React from 'react';
 
-class pages extends React.Component{
+class Boke extends React.Component{
 	constructor(props) {
 	  super(props);
 	
@@ -9,10 +9,10 @@ class pages extends React.Component{
 	render() {
 		return (
 			<div>
-				pages
+				<span style={{color:'#fff'}}>pages</span>
 				{this.props.children}
 			</div>
 		);
 	}
 }
-export default pages;
+export default Boke;

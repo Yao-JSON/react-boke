@@ -1,5 +1,6 @@
 import React from 'react';
-import Nav from './nav/index.jsx'
+import Nav from './nav/index.jsx';
+import CanvasBackground from './canvas/canvas-01.jsx';
 class Home extends React.Component{
 	constructor(props) {
 	  super(props);
@@ -10,6 +11,7 @@ class Home extends React.Component{
 		return (
 			<div>
 				<Nav/>
+				<CanvasBackground />
 				{this.props.children}
 			</div>
 		);

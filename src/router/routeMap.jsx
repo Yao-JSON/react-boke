@@ -3,8 +3,9 @@ import { Router, Route, IndexRoute } from 'react-router'
 
 import App from '../component'
 import Home from '../component/Home/Home.jsx'
-import Pages from '../component/pages/pages.jsx'
+import Boke from '../component/boke/boke.jsx'
 import NotFound from '../component/NotFound/404.jsx'
+import About from '../component/about/about.jsx'
 
 class RouteMap extends React.Component {
     updateHandle() {
@@ -15,7 +16,7 @@ class RouteMap extends React.Component {
              <Router history={this.props.history} onUpdate={this.updateHandle.bind(this)}>
                 <Route path='/' component={App}>
                     <IndexRoute component={Home}/>
-                    <Route path='detail/:id' component={Pages}/>
+                    <Route path='boke' component={Boke}/>
                     <Route path="*" component={NotFound}/>
                 </Route>
             </Router>
