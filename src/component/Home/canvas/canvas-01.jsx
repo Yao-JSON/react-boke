@@ -1,5 +1,4 @@
 import React from 'react';
-import './canvas.less';
 let ctx = null;
 
 // 创建 实例 Color

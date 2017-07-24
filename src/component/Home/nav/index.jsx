@@ -3,7 +3,6 @@ import Grid from 'uxcore-grid';
 import {Link} from 'react-router';
 import classNames from 'classnames';
 let {Row,Col} = Grid;
-import './index.less';
 let navArr = [
 	{	
 		title:'关于我',
