@@ -1,0 +1,37 @@
+html,body {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    width: 100%;
+    min-height: 89vh;
+    background-color: #000;
+    *:before,*:after{
+		transition:all 2s;
+	}
+}
+.rt{
+	float: right;
+}
+.lt{
+	float: left;
+}
+.clear{
+	&:before,&:after{
+		display: block;
+		clear: both;
+		content: ' ';
+	}
+}
+.TC{
+	text-align: center;
+}
+.TR{
+	text-align: right;
+}
+.TL{
+	text-align: left;
+}
+
+
+

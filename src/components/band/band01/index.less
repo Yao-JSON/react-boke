@@ -1,0 +1,70 @@
+.img-div{
+	display: flex;
+	margin:0 30px;
+	justify-content:center;
+	align-items:center;
+	div{
+		margin:0 40px;
+		position: relative;
+		.img-responsive{
+		    max-width: 100%;
+		    height: auto;
+		}
+		.img-bg{
+			border-radius: 5px;
+			opacity: 0.7;
+			box-shadow: 0 0 5px 5px pink;
+			animation:breathelight 5s linear;
+			animation-iteration-count:infinite;
+		}
+		.dispalyNone{
+			display: none;
+		}
+	}
+}
+@keyframes breathelight {
+	0% {
+		box-shadow:0 0 5px 5px pink,
+		0 0 10px 5px #f00,
+		0 0 15px 5px #f30;
+	}
+	25%{
+		box-shadow:0 0 5px 5px pink,
+		0 0 10px 5px #f00,
+		0 0 15px 5px #f30,
+		0 0 25px 5px #fe0;
+	}
+	50% {
+		box-shadow:0 0 5px 5px pink,
+		0 0 10px 5px #f00,
+		0 0 15px 5px #f30,
+		0 0 25px 5px #fe0,
+		0 0 35px 5px #0fe;
+	}
+	75%{
+		box-shadow:0 0 5px 5px pink,
+		0 0 10px 5px #f00,
+		0 0 15px 5px #f30,
+		0 0 25px 5px #fe0;
+	}
+	100% {
+		box-shadow:0 0 5px 5px pink,
+		0 0 10px 5px #f00,
+		0 0 15px 5px #f30;
+	}
+}
+
+.label{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	color:#fff;
+	text-align: center;
+}
+
+
+
+
+
+
