@@ -50,7 +50,7 @@ class Dot {
 
 class Dots {
 	constructor({clientWidth,clientHeight,MouseX,MouseY}) {
-	  	this.num = 400;
+	  	this.num = 500 * clientWidth/ 1920;
 	  	// 两点绘制线 最小距离
 	  	this.distance = clientWidth / 14;
 	  	// 两点绘制线 距离鼠标 中心点的距离 范围
@@ -182,10 +182,9 @@ class Canvas01 extends React.Component{
 			})
 		});
 	}
-	shouldComponentUpdate(nextProps, nextState){
-		return (
-			this.props.clientHeight !== nextProps.clientHeight
-			|| 
+	shouldComponentUpdate(nextProps){
+		return (this.props.clientHeight !== nextProps.clientHeight
+			||
 			this.props.clientWidth !== nextProps.clientWidth
 			||
 			this.props.MouseX !== nextProps.MouseX

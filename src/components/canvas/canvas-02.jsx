@@ -11,17 +11,24 @@ class Canvas02 extends React.Component{
 	  this.state = {};
 	}
 	render(){
-		console.log('Canvas02');
+		if(canvasParentNode && canvas){
+			let canvasParentNodeStyle = window.getComputedStyle(canvasParentNode);
+			w = parseInt(canvasParentNodeStyle.width);
+			h = parseInt(canvasParentNodeStyle.height);
+			canvas.width = w;
+			canvas.height=h;
+		}
 		let style = {
 			minHeight:this.props.clientHeight
 		}
 		return (
-			<div className='canvas-circle' 
+			<div className='canvas-circle'
 			style={style}
 			ref={node => {
 				canvasParentNode = node;
 			}}>
-				<canvas 
+				<canvas
+				className='canvas-02'
 				ref = {node => {
 					canvas = node;
 				}}
@@ -34,13 +41,14 @@ class Canvas02 extends React.Component{
 		let canvasParentNodeStyle = window.getComputedStyle(canvasParentNode);
 		w = parseInt(canvasParentNodeStyle.width);
 		h = parseInt(canvasParentNodeStyle.height);
-		console.log(w,h);
+		let clientWidth = this.props.clientWidth;
+		let dotNum = 10000 * clientWidth /1920;
 		canvas.width = w;
 		canvas.height=h;
 		function animate(){
 			ctx.clearRect(0,0,w,h);
 			t += 0.1;
-			for(let i =0;++i<10000;){
+			for(let i =0;++i<dotNum;){
 				var f = 0.05 + ((Math.sin(t * 0.00002) / Math.PI) * 0.2);
 
 		        var r = (Math.min(w, h)) * (Math.cos((t + i) * f) / Math.PI * 1.5);
@@ -50,14 +58,19 @@ class Canvas02 extends React.Component{
 				ctx.fillStyle = `rgba(225,0,255,0.5)`;
 				ctx.fillRect(x,y,1.5,1.5)
 			}
-			setTimeout(animate,16)
+			setTimeout(animate,20)
 		}
 		animate();
 	}
-	shouldComponentUpdate(nextProps, nextState){
-		return (this.props.clientHeight !== nextProps.clientHeight || this.props.clientWidth !== nextProps.clientWidth);
+	shouldComponentUpdate(nextProps){
+		return (
+			this.props.clientHeight !== nextProps.clientHeight 
+			||
+			this.props.clientWidth !== nextProps.clientWidth
+			||
+			this.props.clientWidth !== nextProps.clientWidth);
 	}
-	componentDidUpdate(nextProps, nextState){
+	componentDidUpdate(){
 		w = canvas.width;
 		h = canvas.height;
 	}

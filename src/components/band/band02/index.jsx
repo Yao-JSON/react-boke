@@ -7,8 +7,7 @@ class HomeBand02 extends React.Component{
 	  	super(props);
 	
 	  	this.state = {
-	  		fonttitle:null,
-
+	  		fonttitle:null
 	  	};
 
 	}
@@ -19,7 +18,6 @@ class HomeBand02 extends React.Component{
 		let fontContent = {
 			fontSize:`${1.4 * this.props.rem}rem`
 		}
-		console.log('band02');
 		return (
 			<Grid fluid={true} className='write'>
 				<Row>
@@ -35,7 +33,7 @@ class HomeBand02 extends React.Component{
 						 		相信代码是是一种艺术，编程是一种的态度。
 						 	</li>
 						 	<li style={fontContent}>
-						 		Good Good Study Day Day Up 
+						 		Good Good Study Day Day Up
 						 	</li>
 						 	<li style={fontContent}>
 						 		Fighting!!!
@@ -46,7 +44,7 @@ class HomeBand02 extends React.Component{
 			</Grid>
 		);
 	}
-	shouldComponentUpdate(nextProps,nextState){
+	shouldComponentUpdate(nextProps){
 		return this.props.rem !== nextProps.rem;
 	}
 }

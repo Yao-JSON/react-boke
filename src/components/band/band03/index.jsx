@@ -12,20 +12,26 @@ class HomeBand03 extends React.Component{
 	  this.state = {};
 	}
 	render(){
-		console.log('HomeBand03');
 		let style = {minHeight:this.props.clientHeight}
 		return (
 			<Grid fluid={true}>
 				<Row>
 					<Col mdOffset={3} md={18} sm={24} xs={24} style={style}>
-						<Canvas2 clientHeight={this.props.clientHeight}/>
+						<Canvas2
+						clientWidth = {this.props.clientWidth} 
+						clientHeight={this.props.clientHeight}/>
 					</Col>
 				</Row>
 			</Grid>
 		);
 	}
-	shouldComponentUpdate(nextProps,nextState){
-		return (this.props.clientHeight !== nextProps.clientHeight || this.props.rem !== nextProps.rem);
+	shouldComponentUpdate(nextProps){
+		return (
+			this.props.clientHeight !== nextProps.clientHeight 
+			|| 
+			this.props.rem !== nextProps.rem
+			||
+			this.props.clientWidth !== nextProps.clientWidth);
 	}
 }
 

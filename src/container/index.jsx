@@ -29,7 +29,7 @@ class App extends React.Component{
 				e.preventDefault();
 				this.MouseMove(e)
 			}}
-			onWheel={e => {
+			onWheel={() => {
 				let Top = document.documentElement.scrollTop || document.body.scrollTop;
 				if(Top == oldTop){
 					return;

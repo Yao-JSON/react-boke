@@ -1,6 +1,7 @@
 import React from 'react';
 import bgImg from '../../../images/band01.jpeg';
 import classnames from 'classnames';
+
 import './index.less';
 class HomeBand01 extends React.Component{
 	constructor(props) {
@@ -9,7 +10,6 @@ class HomeBand01 extends React.Component{
 	  this.state = {};
 	}
 	render(){
-		console.log('band01');
 		return (
 			<div className='img-div' style={{minHeight:this.props.clientHeight}}>
 				<div className='img'>
@@ -19,11 +19,12 @@ class HomeBand01 extends React.Component{
 						<li style={{fontSize:(this.props.rem * 1.8) + 'rem',marginTop:(this.props.rem * 3) +'rem'}}>没有什么是不可能的</li>
 						<li style={{fontSize:(this.props.rem * 2.4) + 'rem',marginTop:(this.props.rem * 3) +'rem'}}>Created By YJSON.</li>
 					</ul>
+					
 				</div>
 			</div>
 		);
 	}
-	shouldComponentUpdate(nextProps, nextState){
+	shouldComponentUpdate(nextProps){
 		return (this.props.clientHeight !== nextProps.clientHeight || this.props.rem !== nextProps.rem);
 	}
 }
