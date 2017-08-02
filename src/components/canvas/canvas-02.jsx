@@ -2,6 +2,31 @@ import React from 'react';
 let canvas = null;
 let ctx = null;
 let t =0,w,h,canvasParentNode;
+import './canvas.less';
+import {Link} from 'react-router';
+let BokeButton = React.createClass({
+	propTypes:{
+		text:React.PropTypes.string,
+		buttonText:React.PropTypes.string
+	},
+	render(){
+		return (
+			<div className='boke-button-container'>
+				<div>{this.props.text}</div>
+				<div>
+					<button>
+						<Link to='boke'>
+							{this.props.buttonText}
+						</Link>
+					</button>
+				</div>
+			</div>
+		);
+	},
+	shouldComponentUpdate(nextProps,nextState){
+		console.log(nextProps,nextState);
+	}
+});
 
 
 class Canvas02 extends React.Component{
@@ -19,7 +44,8 @@ class Canvas02 extends React.Component{
 			canvas.height=h;
 		}
 		let style = {
-			minHeight:this.props.clientHeight
+			minHeight:this.props.clientHeight,
+			position:'relative'
 		}
 		return (
 			<div className='canvas-circle'
@@ -33,6 +59,7 @@ class Canvas02 extends React.Component{
 					canvas = node;
 				}}
 				></canvas>
+				<BokeButton text='博客' buttonText='进入博客'/>
 			</div>
 		);
 	}
@@ -55,10 +82,10 @@ class Canvas02 extends React.Component{
 		        var x = Math.sin(i) * r + (canvas.width / 2);
 		        var y = Math.cos(i) * r + (canvas.height / 2);
 
-				ctx.fillStyle = `rgba(225,0,255,0.5)`;
+				ctx.fillStyle = `rgba(${i%255},${255 - i%255},${i%255},0.8)`;
 				ctx.fillRect(x,y,1.5,1.5)
 			}
-			setTimeout(animate,20)
+			setTimeout(animate,100)
 		}
 		animate();
 	}

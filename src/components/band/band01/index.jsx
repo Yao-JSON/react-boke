@@ -19,7 +19,6 @@ class HomeBand01 extends React.Component{
 						<li style={{fontSize:(this.props.rem * 1.8) + 'rem',marginTop:(this.props.rem * 3) +'rem'}}>没有什么是不可能的</li>
 						<li style={{fontSize:(this.props.rem * 2.4) + 'rem',marginTop:(this.props.rem * 3) +'rem'}}>Created By YJSON.</li>
 					</ul>
-					
 				</div>
 			</div>
 		);

@@ -21,7 +21,8 @@ let config = Object.assign({}, baseConfig, {
     new webpack.NoErrorsPlugin(),
     new BowerWebpackPlugin({
       searchResolveModulesDirectories: false
-    })
+    }),
+    require('autoprefixer')
   ],
   module: defaultSettings.getDefaultModules()
 });

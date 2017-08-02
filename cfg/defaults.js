@@ -38,7 +38,7 @@ function getDefaultModules() {
       },
       {
         test: /\.less/,
-        loader: 'style-loader!css-loader!postcss-loader!less-loader'
+        loader: 'style-loader!css-loader!less-loader'
       },
       {
         test: /\.styl/,
@@ -51,12 +51,12 @@ function getDefaultModules() {
       {
         test: /\.(mp4|ogg|svg)$/,
         loader: 'file-loader'
+      },
+      {
+        test:/\.json$/,
+        loader: 'json-loader'
       }
-    ],
-    rules:[{
-        test: /\.(css|scss|less)$/,
-        loader:"style-loader!css-loader?importLoaders=1!postcss-loader"
-    }]
+    ]
   };
 }
 

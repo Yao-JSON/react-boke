@@ -6,11 +6,13 @@ import CanvasBackground from '../../components/canvas/canvas-01';
 import HomeBand01 from '../../components/band/band01';
 import HomeBand02 from '../../components/band/band02';
 import HomeBand03 from '../../components/band/band03';
+import HomeBand04 from '../../components/band/band04/';
+import Footer from '../../components/footer';
 import './home.less';
 class Home extends React.Component{
 	constructor(props) {
 	  	super(props);
-		
+
 	 	this.state = {};
 	}
 	render(){
@@ -26,11 +28,12 @@ class Home extends React.Component{
 					<HomeBand01
 						rem ={rem}
 						clientHeight = {this.props.Resize.clientHeight}/>
-					<CanvasBackground
-						MouseX = {this.props.MouseMove.MouseX || this.props.Resize.clientWidth/2}
-						MouseY = {this.props.MouseMove.MouseY || this.props.Resize.clientHeight/2}
-						clientWidth = {this.props.Resize.clientWidth}
-						clientHeight = {this.props.Resize.clientHeight}/>
+					{this.props.Resize.clientWidth > 768? <CanvasBackground
+											MouseX = {this.props.MouseMove.MouseX || this.props.Resize.clientWidth/2}
+											MouseY = {this.props.MouseMove.MouseY || this.props.Resize.clientHeight/2}
+											clientWidth = {this.props.Resize.clientWidth}
+											clientHeight = {this.props.Resize.clientHeight}/>:''}
+
 					<HeaderNav ScrollTop={this.props.ScrollTop.ScrollTop} clientWidth={this.props.Resize.clientWidth}/>
 					<button className='icon-button' >
 						<Icon name="bottom" className='bottom' />
@@ -45,6 +48,12 @@ class Home extends React.Component{
 						rem={rem}
 						clientWidth = {this.props.Resize.clientWidth}
 						clientHeight = {this.props.Resize.clientHeight}/>
+				</div>
+				<div style={style2}>
+					<HomeBand04 clientWidth = {this.props.Resize.clientWidth}
+						clientHeight = {this.props.Resize.clientHeight}/> />
+          <Footer clientWidth = {this.props.Resize.clientWidth}
+                  clientHeight = {this.props.Resize.clientHeight}/>
 				</div>
 			</div>
 		);
