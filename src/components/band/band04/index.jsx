@@ -4,7 +4,6 @@ import ButtonLink from './button-link.json';
 import classnames from 'classnames';
 import Grid from 'uxcore-grid';
 let { Row,Col } = Grid
-console.log(ButtonLink);
 let Button = React.createClass({
 	propTypes:{
 		text:React.PropTypes.string,

@@ -23,8 +23,8 @@ let BokeButton = React.createClass({
 			</div>
 		);
 	},
-	shouldComponentUpdate(nextProps,nextState){
-		console.log(nextProps,nextState);
+	shouldComponentUpdate(nextProps){
+		return (this.props.text !== nextProps.text || this.props.buttonText !== nextProps.buttonText);
 	}
 });
 
@@ -32,7 +32,7 @@ let BokeButton = React.createClass({
 class Canvas02 extends React.Component{
 	constructor(props) {
 	  super(props);
-	
+
 	  this.state = {};
 	}
 	render(){
@@ -53,12 +53,7 @@ class Canvas02 extends React.Component{
 			ref={node => {
 				canvasParentNode = node;
 			}}>
-				<canvas
-				className='canvas-02'
-				ref = {node => {
-					canvas = node;
-				}}
-				></canvas>
+				<canvas className='canvas-02' ref = {node => {canvas = node;}}></canvas>
 				<BokeButton text='博客' buttonText='进入博客'/>
 			</div>
 		);
@@ -77,7 +72,6 @@ class Canvas02 extends React.Component{
 			t += 0.1;
 			for(let i =0;++i<dotNum;){
 				var f = 0.05 + ((Math.sin(t * 0.00002) / Math.PI) * 0.2);
-
 		        var r = (Math.min(w, h)) * (Math.cos((t + i) * f) / Math.PI * 1.5);
 		        var x = Math.sin(i) * r + (canvas.width / 2);
 		        var y = Math.cos(i) * r + (canvas.height / 2);
@@ -91,7 +85,7 @@ class Canvas02 extends React.Component{
 	}
 	shouldComponentUpdate(nextProps){
 		return (
-			this.props.clientHeight !== nextProps.clientHeight 
+			this.props.clientHeight !== nextProps.clientHeight
 			||
 			this.props.clientWidth !== nextProps.clientWidth
 			||

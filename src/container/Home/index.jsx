@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Icon from 'uxcore-icon';
+const assert = require('assert');
 import HeaderNav from '../../components/Nav/';
 import CanvasBackground from '../../components/canvas/canvas-01';
 import HomeBand01 from '../../components/band/band01';
@@ -58,8 +59,18 @@ class Home extends React.Component{
 			</div>
 		);
 	}
+	shouldComponentUpdate(nextProps){
+    try {
+      assert.deepEqual(nextProps,this.props)
+
+    }catch (e){
+      return true;
+    }
+
+    return false;
+  }
 }
 let mapStateToProps = (state) => {
 	return state;
-}
+};
 export default connect(mapStateToProps,null)(Home);
