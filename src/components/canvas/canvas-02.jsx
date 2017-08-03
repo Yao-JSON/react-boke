@@ -70,6 +70,9 @@ class Canvas02 extends React.Component{
 		function animate(){
 			ctx.clearRect(0,0,w,h);
 			t += 0.1;
+      if(!canvas){
+        return;
+      }
 			for(let i =0;++i<dotNum;){
 				var f = 0.05 + ((Math.sin(t * 0.00002) / Math.PI) * 0.2);
 		        var r = (Math.min(w, h)) * (Math.cos((t + i) * f) / Math.PI * 1.5);

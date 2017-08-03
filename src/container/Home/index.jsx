@@ -16,6 +16,21 @@ class Home extends React.Component{
 
 	 	this.state = {};
 	}
+  scrollTo(){
+	  let clientHeight = this.props.Resize.clientHeight  -100;
+	  let top = 0,vTop = 50;
+
+	  function scroll(){
+      top += vTop;
+	    if(top<clientHeight){
+	      setTimeout(()=> {
+          scroll()
+        },top/20)
+      }
+      window.scrollTo(0,top)
+    }
+    scroll();
+  }
 	render(){
 		let W = this.props.Resize.clientWidth , H = this.props.Resize.clientHeight;
 		let WH = W/H >1 ? W/H : H/W;
@@ -24,7 +39,7 @@ class Home extends React.Component{
 		let style = {minHeight:this.props.Resize.clientHeight,position:'relative'};
 		let style2 = {minHeight:this.props.Resize.clientHeight*3/4,position:'relative'};
 		return (
-			<div>
+			<div className='home'>
 				<div style={style}>
 					<HomeBand01
 						rem ={rem}
@@ -36,7 +51,7 @@ class Home extends React.Component{
 											clientHeight = {this.props.Resize.clientHeight}/>:''}
 
 					<HeaderNav ScrollTop={this.props.ScrollTop.ScrollTop} clientWidth={this.props.Resize.clientWidth}/>
-					<button className='icon-button' >
+					<button className='icon-button' onClick={this.scrollTo.bind(this)}>
 						<Icon name="bottom" className='bottom' />
 						<Icon name="bottom" className='bottom' />
 					</button>
@@ -72,5 +87,8 @@ class Home extends React.Component{
 }
 let mapStateToProps = (state) => {
 	return state;
+};
+let mapDispatchProps= () => {
+
 };
 export default connect(mapStateToProps,null)(Home);

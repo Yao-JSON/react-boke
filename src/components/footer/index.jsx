@@ -52,6 +52,9 @@ export default class extends React.Component{
                 <p>
                   Copyright © YJSON {this.state.year}
                 </p>
+                <p>
+                  本站是由 <a href="https://github.com/facebook/react" target='_blank'>react</a> 框架开发
+                </p>
               </div>
             </Row>
           </Col>

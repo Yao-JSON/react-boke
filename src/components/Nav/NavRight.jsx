@@ -14,7 +14,7 @@ let navArr = [
 	},
 	{
 		title:'联系我',
-		link:'contact'
+		link:'me'
 	}
 ];
 let NavList = navArr.map((vaule,index) => {

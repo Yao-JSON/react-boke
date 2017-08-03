@@ -60,9 +60,6 @@ export default  class extends React.Component{
 			</div>
 		);
 	}
-	componentDidMount(){
-		console.log(arguments);
-	}
 	shouldComponentUpdate(nextProps,nextState){
 
     return (this.props.clientWidth !== nextProps.clientWidth
