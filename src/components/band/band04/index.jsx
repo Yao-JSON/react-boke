@@ -60,8 +60,7 @@ export default  class extends React.Component{
 			</div>
 		);
 	}
-	shouldComponentUpdate(nextProps,nextState){
-
+	shouldComponentUpdate(nextProps){
     return (this.props.clientWidth !== nextProps.clientWidth
       || this.props.clientHeight !== nextProps.clientHeight);
 	}

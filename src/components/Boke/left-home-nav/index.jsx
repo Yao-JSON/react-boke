@@ -5,15 +5,14 @@ import Icon from 'uxcore-icon';
 import ImgUserHeader from '../../../images/band01.jpeg';
 import navJson from './left-nav.json';
 import { Link } from 'react-router';
-let Menu = require('uxcore-menu');
-var MenuItem = Menu.Item;
 class Header extends React.Component{
   constructor(props){
       super(props);
   }
   render(){
+    let clientWidth = this.props.clientWidth;
     return (
-      <div className={classnames('left-nav',{'left-nav-header-180':this.props.clientWidth>768?true:false})}>
+      <div className={classnames('left-nav clear',{'left-nav-header-180':clientWidth>768?true:false,'left-nav-header-110':clientWidth<=768?true:false})}>
         <div className='left-home-nav-img-container'>
           <img src={ImgUserHeader} alt="用户头像"/>
         </div>
@@ -25,70 +24,15 @@ class Header extends React.Component{
   }
 }
 
+function PcIcon (props) {
+  if(props.clientWidth > 768){
+    return <Icon name={props.icon}/>
+  }
+  return <i></i>;
+}
 class PCMenu extends React.Component{
   constructor(props){
     super(props)
-    this.state = {
-      current:'0'
-    }
-  }
-  handler(e){
-    this.setState({
-      current:e.key
-    });
-  }
-  render(){
-    return(
-      <Menu
-        className='PC-menu'
-        selectedKeys={[this.state.current]}
-        onClick={(e) => {
-          this.handler(e);
-        }}>
-        {
-
-        }
-      </Menu>
-    )
-  }
-}
-class YDMenu extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      current:'0'
-    }
-  }
-  handler(e){
-    this.setState({
-      current:e.key
-    });
-  }
-  render(){
-    return(
-      <Menu
-        selectedKeys={[this.state.current]}
-        onClick={(e) =>{
-        this.handler(e);
-      }}>
-        {
-          navJson.menu.map((value,index) => {
-            return (
-              <MenuItem key={index}>
-                <i className="kuma-icon kuma-icon-wangwang"></i>
-                <Link to={value.path}  >{value.title}</Link>
-              </MenuItem>
-            );
-          })
-        }
-      </Menu>
-    )
-  }
-}
-
-class Body extends React.Component{
-  constructor(props){
-    super(props);
     this.state = {
       current:0
     }
@@ -99,42 +43,78 @@ class Body extends React.Component{
     });
   }
   render(){
+    let clientWidth = this.props.clientWidth;
+    return(
+      <ul className={classnames('body-nav-title',{'boke-body-YD-title clear':clientWidth<=768})}>
+        {
+          navJson.menu.map((value,index) => {
+            return (
+              <Link key={index} to={value.path}  onClick={() => {
+                this.handler(index);
+              }}>
+                <li  className={classnames({li:clientWidth>768,'activeClassName':this.state.current === index})}>
+                  <PcIcon clientWidth ={clientWidth} icon={value.icon}/>
+                  <span>{value.title}</span>
+                </li>
+              </Link>
+            );
+          })
+        }
+      </ul>
+    )
+  }
+  shouldComponentUpdate(nextProps,nextState){
+    return(
+      this.props.clientWidth !== nextProps.clientWidth
+      ||
+      this.props.current !== nextState.current
+    );
+  }
+}
+
+class Body extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      current:0
+    }
+  }
+  render(){
+    let clientWidth = this.props.clientWidth;
     return(
       <div className='left-body'>
         <div className='body-title'>
           <p className='TC'>YJSON</p>
           <p className='TC'>剑锋所指，所向披靡</p>
-          <p className='TR'>————亮剑</p>
+          <p className='TR'>——亮剑</p>
         </div>
-        <div className='body-nav'>
+        <div className={classnames('body-nav',{'body-nav-padding-right-15':clientWidth>768})}>
           <div className='body-nav-iocn'>
             <Icon name='liucheng' />
           </div>
-          <ul className='body-nav-title'>
+          {
+            <PCMenu clientWidth={clientWidth}/>
+          }
+          <ul className={classnames('boke-www-link', 'flex','flex-justify-content-center')}>
             {
-              this.props.clientWidth>768?navJson.menu.map((value,index) => {
+              navJson.btn_link.map((value , index) => {
                 return (
-                  <Link to={value.path}  onClick={() => {
-                    this.handler(index);
-                  }}>
-                    <li key={index} className={classnames('li',{'activeClassName':this.state.current === index})}>
-                      <Icon name={value.icon} />
-                      <span>{value.title}</span>
-                    </li>
-                  </Link>
+                  <li key={index}>
+                    <a href={value.link}>
+                      <i className={classnames('iconfont',value.icon)}></i>
+                    </a>
+                  </li>
                 );
-              }):<YDMenu/>
+              })
             }
           </ul>
         </div>
       </div>
     );
   }
-  shouldComponentUpdate(nextProps,nextState){
+  shouldComponentUpdate(nextProps){
     return (
       this.props.clientWidth !== nextProps.clientWidth
-      ||
-      this.state.current !== nextState.current
     );
   }
 }
@@ -146,7 +126,7 @@ export default class extends React.Component{
   }
   render(){
     return (
-        <div style={{height:'100vh'}}>
+        <div className='boke-nav'>
           <Header clientWidth={this.props.clientWidth}/>
           <Body   clientWidth={this.props.clientWidth}/>
         </div>

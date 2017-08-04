@@ -1,60 +1,101 @@
 import React from 'react';
 import Grid from 'uxcore-grid';
 let { Row , Col } = Grid;
-let assert = require('assert');
 import LeftHomeNav from '../../components/Boke/left-home-nav';
-import { Route , Link} from 'react-router';
+import { connect } from 'react-redux';
+import './index.less';
+import assert from 'assert';
+import Layout from 'uxcore-layout';
+let { Left , Right } = Layout;
 
-// import Layout from 'uxcore-layout';
-// let { Left , Right } = Layout;
-// var Prism = require('prismjs');
-//
-// // The code snippet you want to highlight, as a string
-// var code = "var data = 1;";
-//
-// // Returns a highlighted HTML string
-// var html = Prism.highlight(code, Prism.languages.javascript);
-
-export default class extends React.Component{
+class PCLayout extends React.Component{
   constructor(props){
     super(props);
-    var clientHeight = document.body.offsetHeight || document.documentElement.offsetHeight;
-    var clientWidth = document.body.offsetWidth || document.documentElement.offsetWidth;
-    this.state={
-      clientHeight,
-      clientWidth
-    }
   }
   render(){
-    let clientWidth = document.body.offsetWidth || document.documentElement.offsetWidth;
-    let height = clientWidth > 976 ? '100vh' : 'auto';
-    return (
-      <Grid fluid={true}>
-        <Row>
-          {/* 左边 */}
-          <Col md={8} sm={24} xs={24}  style={{height:'100vh'}} className='padding-left-0'>
-            <LeftHomeNav clientWidth={clientWidth}/>
-          </Col>
-          {/* 右边 */}
-          <Col md={16} sm={24} xs={24} style={{height:height,overflowY:'auto',background:'#dd0'}} className='padding-right-0'>
+    return(
+      <Layout className='boke-layout'>
+        <Left width={400} className='boke-layout-left'>
+          <LeftHomeNav clientWidth={this.props.clientWidth}/>
+        </Left>
+        <Right adaptive={true} className='boke-layout-right'>
+          <div className='boke-view' style={{height:this.props.clientHeight}}>
             <div style={{height:'300vh'}}>
               {this.props.children}
+            </div>
+          </div>
+        </Right>
+      </Layout>
+    )
+  }
+  shouldComponentUpdate(nextProps){
+      try{
+        assert.deepEqual(this.props,nextProps)
+      }catch (e){
+        return true;
+      }
+    return false
+  }
+}
+
+class YDLayout extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return(
+      <Grid fluid={true}>
+        <Row>
+          <Col xs={24} sm={24} className='boke-nav-padding-notthing'>
+            <LeftHomeNav clientWidth={this.props.clientWidth}/>
+          </Col>
+          <Col xs={24} sm={24}>
+            <div className='boke-view' style={{height:this.props.clientHeight}}>
+              <div style={{height:'300vh'}}>
+                {this.props.children}
+              </div>
             </div>
           </Col>
         </Row>
       </Grid>
+    )
+  }
+  shouldComponentUpdate(nextProps){
+    try{
+      assert.deepEqual(this.props,nextProps)
+    }catch (e){
+      return true;
+    }
+    return false
+  }
+}
+
+class Boke extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    let clientWidth = document.documentElement.clientWidth || document.body.clientWidth ;
+    let clientHeight = document.documentElement.clientHeight || document.body.clientHeight ;
+
+    return (
+      clientWidth > 768?
+      <PCLayout clientWidth={clientWidth} clientHeight={clientHeight}>{this.props.children}</PCLayout>
+      : <YDLayout clientWidth={clientWidth} clientHeight={clientHeight}>{this.props.children}</YDLayout>
     );
   }
   componentDidMount(){
 
   }
-  shouldComponentUpdate(nextProps,nextstate){
-    try{
-      assert.deepEqual(this.props,nextProps)
-    }catch (er){
-
-      return true
-    }
-    return false;
+  shouldComponentUpdate(nextProps){
+    return(
+      this.props.Resize.clientWidth !== nextProps.clientWidth
+      ||
+      this.props.Resize.clientHeight !== nextProps.clientHeight)
   }
 }
+let mapStateToProps = (state) => {
+  return state;
+};
+
+export default connect(mapStateToProps,null)(Boke);

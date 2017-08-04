@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 
 import 'styles/App.less';
 import { Provider } from 'react-redux'
-import { hashHistory } from 'react-router'
+import { browserHistory } from 'react-router'
 import RouteMap from './router/routeMap';
 import configStore from './stores/configStore.js';
 let clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
@@ -32,7 +32,7 @@ let store = configStore({
 
 render(
 	<Provider store={store}>
-    	<RouteMap history={hashHistory}/>
+    	<RouteMap history={browserHistory}/>
     </Provider>,
     document.getElementById('app')
 );

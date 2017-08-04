@@ -19,5 +19,24 @@
     "title":"其他",
     "path":"/boke/others",
     "icon":"ceshi"
+  }],
+  "btn_link":[{
+    "icon":"icon-facebook1",
+    "link":"#"
+  },{
+    "icon":"icon-google1",
+    "link":"#"
+  },{
+    "icon":"icon-dingding1",
+    "link":"#"
+  },{
+    "icon":"icon-zhihu",
+    "link":"#"
+  },{
+    "icon":"icon-douban",
+    "link":"#"
+  },{
+    "icon":"icon-weibo",
+    "link":"#"
   }]
 }

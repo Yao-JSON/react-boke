@@ -3,16 +3,21 @@
   background-color: #333;
   &.left-nav-header-180{
     height: 180px;
+    .left-home-nav-img-container{
+      margin-top: -10px;
+    }
   }
   &.left-nav-header-110{
     height: 110px;
+    .left-home-nav-img-container{
+      margin-top: -48px;
+    }
   }
 }
 .left-home-nav-img-container{
   position: absolute;
-  top: 50%;
   left:50%;
-  margin-top: -10px;
+  top: 50%;
   margin-left: -65px;
   text-align: center;
   img{
@@ -33,7 +38,11 @@
   p:not(:first-child){
     font-size: .8rem;
   }
+  p.TR{
+    padding-right: 20px;
+  }
 }
+
 .body-nav{
   .body-nav-iocn{
     icon{
@@ -43,6 +52,9 @@
     }
     text-align: center;
   }
+  &-padding-right-15{
+    padding-right: 15px;
+  }
 }
 .activeClassName-link{
   color: #ff1100;
@@ -51,21 +63,49 @@
   a{
     display: block;
   }
+  li{
+    icon,span{
+      color: #181818;
+      font-size: .8rem;
+    }
+  }
   .li{
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
     padding-left: 10px;
     icon,span{
-      font-size: 1.2rem;
-      color: #181818;
+      font-size: 1rem;
       margin-left: 10px;
+    }
+    &.activeClassName{
+      background-color: bisque;
     }
   }
   .activeClassName{
-    color: red;
-    background-color: bisque;
     icon,span{
      color: #ff1100;
+    }
+  }
+  &.boke-body-YD-title{
+    width: 80%;
+    margin: 10px auto;
+    li{
+      float: left;
+      width: 20%;
+      text-align: center;
+    }
+  }
+}
+
+.boke-www-link{
+  margin-top: 20px;
+  li{
+    margin:5px 10px;
+    a,i{
+      font-size: 2rem;
+      &:hover{
+        color: #dddd00;
+      }
     }
   }
 }

@@ -8,7 +8,7 @@ import Canvas2 from '../../canvas/canvas-02.jsx';
 class HomeBand03 extends React.Component{
 	constructor(props) {
 	  super(props);
-	
+
 	  this.state = {};
 	}
 	render(){
@@ -18,7 +18,7 @@ class HomeBand03 extends React.Component{
 				<Row>
 					<Col mdOffset={3} md={18} sm={24} xs={24} style={style}>
 						<Canvas2
-						clientWidth = {this.props.clientWidth} 
+						clientWidth = {this.props.clientWidth}
 						clientHeight={this.props.clientHeight}/>
 					</Col>
 				</Row>
@@ -26,9 +26,8 @@ class HomeBand03 extends React.Component{
 		);
 	}
 	shouldComponentUpdate(nextProps){
-		return (
-			this.props.clientHeight !== nextProps.clientHeight 
-			|| 
+		return (this.props.clientHeight !== nextProps.clientHeight
+			||
 			this.props.rem !== nextProps.rem
 			||
 			this.props.clientWidth !== nextProps.clientWidth);

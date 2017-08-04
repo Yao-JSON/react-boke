@@ -5,7 +5,6 @@ require('./index.less');
 import classnames from 'classnames';
 import Grid from 'uxcore-grid';
 let { Row , Col } = Grid;
-let Year;
 export default class extends React.Component{
   constructor(props){
     super(props);

@@ -12,6 +12,9 @@ export default class BokeView extends React.Component{
       </div>
     );
   }
+  shouldComponentUpdate(nextProps){
+      return (this.props.params.name !== nextProps.params.name)
+  }
 }
 
 

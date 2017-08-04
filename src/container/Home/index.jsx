@@ -88,7 +88,5 @@ class Home extends React.Component{
 let mapStateToProps = (state) => {
 	return state;
 };
-let mapDispatchProps= () => {
 
-};
 export default connect(mapStateToProps,null)(Home);
