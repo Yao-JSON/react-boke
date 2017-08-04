@@ -1,0 +1,23 @@
+{
+  "menu":[{
+    "title":"博客首页",
+    "path":"/boke/boke-home",
+    "icon":"shouye"
+  },{
+    "title":"主页",
+    "path":"/boke/home",
+    "icon":"moren"
+  },{
+    "title":"所有文章",
+    "path":"/boke/all-text",
+    "icon":"shu1"
+  },{
+    "title":"知识点",
+    "path":"/boke/knowledge",
+    "icon":"zhanghaobianji"
+  },{
+    "title":"其他",
+    "path":"/boke/others",
+    "icon":"ceshi"
+  }]
+}

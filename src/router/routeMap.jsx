@@ -3,7 +3,8 @@ import { Router, Route, IndexRoute } from 'react-router';
 
 import App from '../container/';
 import Home from '../container/Home';
-import Boke from '../container/boke';
+import BokeApp from '../container/boke';
+import BokeView from '../container/boke/boke-view';
 import About from '../container/About';
 import Me from '../container/me';
 
@@ -19,7 +20,9 @@ class RouteMap extends React.Component{
 				<Route path='/' component={ App }>
 					<IndexRoute component={Home}/>
           <Route path='about' component={About}/>
-          <Route path='boke' component={Boke}/>
+          <Route path='/boke' component={BokeApp}>
+            <Route path='/boke/:name' component={BokeView}/>
+          </Route>
           <Route path='/me(/:name)'>
             <IndexRoute component={Me}/>
           </Route>

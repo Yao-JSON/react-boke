@@ -2,7 +2,7 @@
 {"text":"钉钉","link":"#","icon":"icon-dingding"},
 {"text":"google","link":"#","icon":"icon-google"},
 {"text":"Facebook","link":"#","icon":"icon-facebook"},
-{"text":"博客园","link":"#","icon":"icon-boke"},
-{"text":"github","link":"#","icon":"icon-mi-icon-github"},
-{"text":"微信","link":"#","icon":"icon-weixin"},
-{"text":"掘金主页","link":"#","icon":"icon-react"}]
+{"text":"博客园","link":"#","icon":"icon-blog"},
+{"text":"github","link":"#","icon":"icon-github"},
+{"text":"微信","link":"#","icon":"icon-winxin"},
+{"text":"掘金主页","link":"#","icon":"icon-jin"}]
