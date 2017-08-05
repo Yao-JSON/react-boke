@@ -15,12 +15,12 @@ let isInitialCompilation = true;
 const compiler = webpack(config);
 
 new WebpackDevServer(compiler, config.devServer)
-.listen(config.port, 'localhost', (err) => {
-  if (err) {
-    console.log(err);
-  }
-  console.log('Listening at localhost:' + config.port);
-});
+  .listen(config.port, 'localhost', (err) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log('Listening at localhost:' + config.port);
+  });
 
 compiler.plugin('done', () => {
   if (isInitialCompilation) {

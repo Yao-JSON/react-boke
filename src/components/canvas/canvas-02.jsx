@@ -93,7 +93,7 @@ class Canvas02 extends React.Component{
 		        var y = Math.cos(i) * r + (canvas.height / 2);
 
 				//ctx.fillStyle = `rgba(${i%255},${255 - i%255},${i%255},0.8)`;
-        ctx.fillStyle = `rgba(0,255,255,0.8)`;
+        ctx.fillStyle = 'rgba(0,255,255,0.8)';
         ctx.fillRect(x,y,1.5,1.5)
 			}
       requestAnimationFrame(animate);

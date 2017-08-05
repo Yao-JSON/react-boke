@@ -5,9 +5,6 @@ export default class BokeView extends React.Component{
   constructor(props){
     super(props);
   }
-  componentWillMount(next){
-
-  }
   render(){
     return (
       <div>

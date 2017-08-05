@@ -22,11 +22,11 @@ let config = Object.assign({}, baseConfig, {
       searchResolveModulesDirectories: false
     }),
     new webpack.optimize.UglifyJsPlugin({
-        compress:{
-          warnings:false,
-          drop_debugger:true,
-          drop_console:true
-        }
+      compress:{
+        warnings:false,
+        drop_debugger:true,
+        drop_console:true
+      }
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
