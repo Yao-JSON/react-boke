@@ -5,6 +5,7 @@ import Icon from 'uxcore-icon';
 import ImgUserHeader from '../../../images/band01.jpeg';
 import navJson from './left-nav.json';
 import { Link } from 'react-router';
+import YDReturn from '../../oterts/return';
 class Header extends React.Component{
   constructor(props){
       super(props);
@@ -12,15 +13,21 @@ class Header extends React.Component{
   render(){
     let clientWidth = this.props.clientWidth;
     return (
-      <div className={classnames('left-nav clear',{'left-nav-header-180':clientWidth>768?true:false,'left-nav-header-110':clientWidth<=768?true:false})}>
-        <div className='left-home-nav-img-container'>
-          <img src={ImgUserHeader} alt="用户头像"/>
-        </div>
+      <div>
+          <YDReturn bgColor='#333' link='/' ScrollTop={this.props.ScrollTop} clientWidth={clientWidth} />
+          <div className={classnames('left-nav clear',{'left-nav-header-180':clientWidth>768?true:false,'left-nav-header-110':clientWidth<=768?true:false})}>
+            <div className='left-home-nav-img-container'>
+              <img src={ImgUserHeader} alt="用户头像"/>
+            </div>
+          </div>
       </div>
+
     );
   }
   shouldComponentUpdate(nextProps){
-      return (this.props.clientWidth !== nextProps.clientWidth);
+      return (this.props.clientWidth !== nextProps.clientWidth
+      ||
+      this.props.ScrollTop !== nextProps.ScrollTop);
   }
 }
 
@@ -127,13 +134,15 @@ export default class extends React.Component{
   render(){
     return (
         <div className='boke-nav'>
-          <Header clientWidth={this.props.clientWidth}/>
+          <Header ScrollTop={this.props.ScrollTop} clientWidth={this.props.clientWidth}/>
           <Body   clientWidth={this.props.clientWidth}/>
         </div>
     );
   }
   shouldComponentUpdate(nextProps){
-    return (this.props.clientWidth !== nextProps.clientWidth);
+    return (this.props.clientWidth !== nextProps.clientWidth
+      ||
+    this.props.ScrollTop !== nextProps.ScrollTop);
   }
 }
 

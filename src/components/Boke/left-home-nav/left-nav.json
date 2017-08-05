@@ -1,19 +1,15 @@
 {
   "menu":[{
-    "title":"博客首页",
-    "path":"/boke/boke-home",
+    "title":"撸码笔记",
+    "path":"/boke/project",
     "icon":"shouye"
   },{
-    "title":"主页",
-    "path":"/boke/home",
-    "icon":"moren"
-  },{
-    "title":"所有文章",
-    "path":"/boke/all-text",
+    "title":"个人简历",
+    "path":"/boke/resume",
     "icon":"shu1"
   },{
-    "title":"知识点",
-    "path":"/boke/knowledge",
+    "title":"随笔",
+    "path":"/boke/essay",
     "icon":"zhanghaobianji"
   },{
     "title":"其他",

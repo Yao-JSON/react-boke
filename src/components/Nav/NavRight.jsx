@@ -10,7 +10,7 @@ let navArr = [
 	},
 	{
 		title:'博客',
-		link:'boke/boke-home?'
+		link:'boke/home'
 	},
 	{
 		title:'联系我',

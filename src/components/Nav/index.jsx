@@ -13,7 +13,7 @@ let NavArr = [
 	},
 	{
 		title:'博客',
-		link:'boke'
+		link:'boke/home'
 	},
 	{
 		title:'联系我',
@@ -42,9 +42,11 @@ class HeaderNav extends React.Component{
 						<ul className='menu-item'>{
 							NavArr.map((value,index) => {
 								return (
-									<li key={index}>
-										<Link to={value.link}>{value.title}</Link>
-									</li>
+                  <Link key={index} to={value.link}>
+                    <li >
+                      {value.title}
+                    </li>
+                  </Link>
 								);
 							})
 						}</ul>
