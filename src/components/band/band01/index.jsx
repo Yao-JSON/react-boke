@@ -10,24 +10,25 @@ class HomeBand01 extends React.Component{
 	  this.state = {};
 	}
 	render(){
+	  let clientWidth = this.props.clientWidth;
 		return (
 			<div className='img-div' style={{minHeight:this.props.clientHeight}}>
 				<div className='img'>
 					<img src={bgImg}  className={classnames('img-bg','img-responsive')}/>
-					<ul className='label'>
-						<li style={{fontSize:'2.6rem',marginTop:'1.8rem'}}>
+					<ul className={classnames('label',{'band01-font-pc':clientWidth > 768,'band01-font-yd':clientWidth < 768})}>
+						<li>
               Nothing is impossible
               <i className='iconFont icon-YJSON'></i>
             </li>
-						<li style={{fontSize:'1.4rem',marginTop:'2rem'}}>没有什么是不可能的</li>
-						<li style={{fontSize:'2rem',marginTop:'2rem'}}>Created By YJSON.</li>
+						<li >没有什么是不可能的</li>
+						<li>Created By YJSON.</li>
 					</ul>
 				</div>
 			</div>
 		);
 	}
 	shouldComponentUpdate(nextProps){
-		return (this.props.clientHeight !== nextProps.clientHeight || this.props.rem !== nextProps.rem);
+		return (this.props.clientHeight !== nextProps.clientHeight || this.props.clientWidth !== nextProps.clientWidth);
 	}
 }
 

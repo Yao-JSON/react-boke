@@ -7,7 +7,10 @@ import './index.less';
 import assert from 'assert';
 import Layout from 'uxcore-layout';
 let { Left , Right } = Layout;
-
+let scrollTop = () =>{
+  document.body.scrollTop=0;
+  document.documentElement.scrollTop = 0;
+};
 class PCLayout extends React.Component{
   constructor(props){
     super(props);
@@ -41,6 +44,9 @@ class PCLayout extends React.Component{
 class YDLayout extends React.Component{
   constructor(props){
     super(props);
+  }
+  componentWillMount(){
+    scrollTop();
   }
   render(){
     return(

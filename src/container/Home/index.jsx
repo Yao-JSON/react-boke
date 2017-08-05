@@ -10,10 +10,13 @@ import HomeBand03 from '../../components/band/band03';
 import HomeBand04 from '../../components/band/band04/';
 import Footer from '../../components/footer';
 import './home.less';
+let scrollTop = () =>{
+  document.body.scrollTop=0;
+  document.documentElement.scrollTop = 0;
+}
 class Home extends React.Component{
 	constructor(props) {
 	  	super(props);
-
 	 	this.state = {};
 	}
   scrollTo(){
@@ -31,6 +34,9 @@ class Home extends React.Component{
     }
     scroll();
   }
+  componentWillMount(){
+    scrollTop();
+  }
 	render(){
 		let W = this.props.Resize.clientWidth , H = this.props.Resize.clientHeight;
 		let WH = W/H >1 ? W/H : H/W;
@@ -42,7 +48,7 @@ class Home extends React.Component{
 			<div className='home'>
 				<div style={style}>
 					<HomeBand01
-						rem ={rem}
+            clientWidth = {this.props.Resize.clientWidth}
 						clientHeight = {this.props.Resize.clientHeight}/>
 					{this.props.Resize.clientWidth > 768? <CanvasBackground
 											MouseX = {this.props.MouseMove.MouseX || this.props.Resize.clientWidth/2}

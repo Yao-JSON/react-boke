@@ -102,7 +102,8 @@ class Body extends React.Component{
           {
             <PCMenu clientWidth={clientWidth}/>
           }
-          <ul className={classnames('boke-www-link', 'flex','flex-justify-content-center')}>
+          <ul className={classnames('boke-www-link', 'flex','flex-justify-content-center',
+            {'boke-www-link-li-5px':clientWidth<768})}>
             {
               navJson.btn_link.map((value , index) => {
                 return (
