@@ -1,5 +1,5 @@
 import React from 'react';
- 
+
 import { connect } from 'react-redux';
 import { Resize , MouseMove , ScrollTop } from '../actions';
 
@@ -22,10 +22,6 @@ class App extends React.Component{
 		return (
 			<div
 			onMouseMove={e => {
-				e.preventDefault();
-				this.MouseMove(e)
-			}}
-			onTouchMove={e => {
 				e.preventDefault();
 				this.MouseMove(e)
 			}}

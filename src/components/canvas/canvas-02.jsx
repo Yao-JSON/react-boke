@@ -109,8 +109,11 @@ class Canvas02 extends React.Component{
 			this.props.clientWidth !== nextProps.clientWidth);
 	}
 	componentDidUpdate(){
-		w = canvas.width;
-		h = canvas.height;
+    if(this.props.clientWidth < 768){
+      return;
+    }
+    w = canvas.width;
+    h = canvas.height;
 	}
 }
 export default Canvas02;
