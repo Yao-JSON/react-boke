@@ -4,7 +4,7 @@ let ctx = null;
 let t =0,w,h,canvasParentNode;
 import './canvas.less';
 import {Link} from 'react-router';
-import yuan from '../../images/yuan.png';
+//import yuan from '../../images/yuan.png';
 let BokeButton = React.createClass({
 	propTypes:{
 		text:React.PropTypes.string,
@@ -44,19 +44,18 @@ class Canvas02 extends React.Component{
 			canvas.width = w;
 			canvas.height=h;
 		}
-		let clientWidth = this.props.clientWidth;
 		let style = {
 			minHeight:this.props.clientHeight,
 			position:'relative'
 		};
-		if(clientWidth < 768){
-		  return (
-		    <div className='canvas-02-bgImg' style={{position:'relative'}}>
-          <img src={yuan} alt="博客"/>
-          <BokeButton text='博客' buttonText='进入博客'/>
-        </div>
-      );
-    }
+		// if(clientWidth < 768){
+		//   return (
+		//     <div className='canvas-02-bgImg' style={{position:'relative'}}>
+    //       <img src={yuan} alt="博客"/>
+    //       <BokeButton text='博客' buttonText='进入博客'/>
+    //     </div>
+    //   );
+    // }
 		return (
 			<div className='canvas-circle'
 			style={style}
@@ -69,9 +68,9 @@ class Canvas02 extends React.Component{
 		);
 	}
 	componentDidMount(){
-	  if(this.props.clientWidth < 768){
-	    return;
-    }
+	 //  if(this.props.clientWidth < 768){
+	 //    return;
+    // }
 		ctx = canvas.getContext('2d');
 		let canvasParentNodeStyle = window.getComputedStyle(canvasParentNode);
 		w = parseInt(canvasParentNodeStyle.width);
@@ -109,9 +108,9 @@ class Canvas02 extends React.Component{
 			this.props.clientWidth !== nextProps.clientWidth);
 	}
 	componentDidUpdate(){
-    if(this.props.clientWidth < 768){
-      return;
-    }
+    // if(this.props.clientWidth < 768){
+    //   return;
+    // }
     w = canvas.width;
     h = canvas.height;
 	}

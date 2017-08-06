@@ -1,0 +1,50 @@
+.boke-home-project{
+  margin: 20px auto;
+  border:1px solid #42DCA3;
+  padding: 10px 0;
+  position: relative;
+  img{
+    max-width: 100%;
+  }
+  .img-container-default{
+    padding: 5px 15px;
+    width: 60%;
+    margin: 0 auto;
+  }
+  .img-project-title{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .img-container-no-default{
+    padding: 5px 15px;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .boke-home-project-bar{
+    &>ul>li:not(:first-child){
+      margin-top: 10px;
+    }
+    li div{
+      float: left;
+    }
+    .label{
+      width: 50px;
+      padding-right: 10px;
+      font-weight: bold;
+    }
+  }
+  .calendar{
+    position: absolute;
+    top:0px;
+    right: 10px;
+    span{
+      margin-left: 5px;
+    }
+    &:hover{
+      icon,span{
+        color: aquamarine;
+      }
+    }
+  }
+}

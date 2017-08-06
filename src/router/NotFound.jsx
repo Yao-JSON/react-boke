@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import './NotFound.less';
+import NotFound from '../components/oterts/404';
 export default class extends React.Component{
   constructor(props){
     super(props);
   }
   render(){
     return(
-      <h1 style={{marginTop:'300px',textAlign:'center'}}>404</h1>
+      <div>
+        <NotFound history={this.props.history} className='empty-data'/>
+      </div>
     );
   }
 }

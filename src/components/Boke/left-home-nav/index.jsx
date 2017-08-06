@@ -25,9 +25,7 @@ class Header extends React.Component{
     );
   }
   shouldComponentUpdate(nextProps){
-      return (this.props.clientWidth !== nextProps.clientWidth
-      ||
-      this.props.ScrollTop !== nextProps.ScrollTop);
+      return (this.props.clientWidth !== nextProps.clientWidth);
   }
 }
 
@@ -39,9 +37,9 @@ function PcIcon (props) {
 }
 class PCMenu extends React.Component{
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
-      current:0
+      current:null
     }
   }
   handler(index){
@@ -56,14 +54,14 @@ class PCMenu extends React.Component{
         {
           navJson.menu.map((value,index) => {
             return (
-              <Link key={index} to={value.path}  onClick={() => {
-                this.handler(index);
-              }}>
-                <li  className={classnames({li:clientWidth>768,'activeClassName':this.state.current === index})}>
+              <li key={index}  className={classnames({li:clientWidth>768,'activeClassName':this.state.current === index})}>
+                <Link  to={value.path}  onClick={() => {
+                  this.handler(index);
+                }}>
                   <PcIcon clientWidth ={clientWidth} icon={value.icon}/>
                   <span>{value.title}</span>
-                </li>
-              </Link>
+                </Link>
+              </li>
             );
           })
         }
@@ -82,9 +80,6 @@ class PCMenu extends React.Component{
 class Body extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      current:0
-    }
   }
   render(){
     let clientWidth = this.props.clientWidth;
@@ -102,8 +97,7 @@ class Body extends React.Component{
           {
             <PCMenu clientWidth={clientWidth}/>
           }
-          <ul className={classnames('boke-www-link', 'flex','flex-justify-content-center',
-            {'boke-www-link-li-5px':clientWidth<768})}>
+          <ul className={classnames('boke-www-link', 'flex','flex-justify-content-center',{'boke-www-link-li-5px':clientWidth<768})}>
             {
               navJson.btn_link.map((value , index) => {
                 return (
@@ -135,15 +129,13 @@ export default class extends React.Component{
   render(){
     return (
         <div className='boke-nav'>
-          <Header ScrollTop={this.props.ScrollTop} clientWidth={this.props.clientWidth}/>
+          <Header  clientWidth={this.props.clientWidth}/>
           <Body   clientWidth={this.props.clientWidth}/>
         </div>
     );
   }
   shouldComponentUpdate(nextProps){
-    return (this.props.clientWidth !== nextProps.clientWidth
-      ||
-    this.props.ScrollTop !== nextProps.ScrollTop);
+    return (this.props.clientWidth !== nextProps.clientWidth);
   }
 }
 

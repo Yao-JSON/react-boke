@@ -1,4 +1,21 @@
 import React from 'react'
+import ProjrctSource from '../../sources/blog/project';
+import HomeProject from '../../components/Boke/home-projrct';
+import Grid from 'uxcore-grid';
+import NotFound from '../../components/oterts/404';
+class ProjectForMe extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return (<Grid fluid={true}>
+      {ProjrctSource.map((value,index) => {
+        return(<HomeProject key={index} {...value}/>);
+      })}
+    </Grid>);
+  }
+}
+
 
 
 export default class BokeView extends React.Component{
@@ -6,11 +23,13 @@ export default class BokeView extends React.Component{
     super(props);
   }
   render(){
-    return (
-      <div>
-        <h1>{ this.props.params.name }</h1>
-      </div>
-    );
+    let name = this.props.params.name;
+    switch (name){
+      case 'project':
+        return(<ProjectForMe/>);
+      default:
+        return (<NotFound history={this.props.history}/>);
+    }
   }
 
   shouldComponentUpdate(nextProps){

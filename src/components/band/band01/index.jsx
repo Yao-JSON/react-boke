@@ -12,10 +12,10 @@ class HomeBand01 extends React.Component{
 	render(){
 	  let clientWidth = this.props.clientWidth;
 		return (
-			<div className='img-div' style={{minHeight:this.props.clientHeight}}>
+			<div className='band01-img-div' style={{minHeight:this.props.clientHeight}}>
 				<div className='img'>
 					<img src={bgImg}  className={classnames('img-bg','img-responsive')}/>
-					<ul className={classnames('label',{'band01-font-pc':clientWidth > 768,'band01-font-yd':clientWidth < 768})}>
+					<ul className={classnames('band01-label',{'band01-font-pc':clientWidth > 768,'band01-font-yd':clientWidth < 768})}>
 						<li>
               Nothing is impossible
               <i className='iconFont icon-YJSON'></i>

@@ -53,7 +53,7 @@ class YDLayout extends React.Component{
       <Grid fluid={true}>
         <Row>
           <Col xs={24} sm={24} className='boke-nav-padding-notthing'>
-            <LeftHomeNav ScrollTop={this.props.ScrollTop} clientWidth={this.props.clientWidth}/>
+            <LeftHomeNav  clientWidth={this.props.clientWidth}/>
           </Col>
           <Col xs={24} sm={24}>
             <div className='boke-view' style={{height:this.props.clientHeight}}>
@@ -83,20 +83,17 @@ class Boke extends React.Component{
   render(){
     let clientWidth = document.documentElement.clientWidth || document.body.clientWidth ;
     let clientHeight = document.documentElement.clientHeight || document.body.clientHeight ;
-    let ScrollTop = this.props.ScrollTop.ScrollTop;
     return (
       clientWidth > 768?
       <PCLayout clientWidth={clientWidth} clientHeight={clientHeight}>{this.props.children}</PCLayout>
-      : <YDLayout ScrollTop={ScrollTop} clientWidth={clientWidth} clientHeight={clientHeight}>{this.props.children}</YDLayout>
+      : <YDLayout clientWidth={clientWidth} clientHeight={clientHeight}>{this.props.children}</YDLayout>
     );
   }
   shouldComponentUpdate(nextProps){
     return(
       this.props.Resize.clientWidth !== nextProps.clientWidth
       ||
-      this.props.Resize.clientHeight !== nextProps.clientHeight
-      ||
-      this.props.ScrollTop.ScrollTop !== nextProps.ScrollTop)
+      this.props.Resize.clientHeight !== nextProps.clientHeight)
   }
 }
 let mapStateToProps = (state) => {

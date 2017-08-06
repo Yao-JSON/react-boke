@@ -10,10 +10,9 @@ class Return extends React.Component{
   }
   render(){
       let clientWidth = this.props.clientWidth;
-      let ScrollTop = this.props.ScrollTop;
       if(clientWidth < 768){
         return (
-          <div className={classnames('others-Return',{'others-fixed-Return':ScrollTop >20})} style={{backgroundColor:this.props.bgColor}}>
+          <div className={classnames('others-Return')} style={{backgroundColor:this.props.bgColor}}>
             <Link to={this.props.link}>
               <Icon name="left" />
               <span>返回</span>
@@ -24,9 +23,7 @@ class Return extends React.Component{
       return <div></div>;
   }
   shouldComponentUpdate(nextProps){
-    return (this.props.clientWidth !== nextProps.clientWidth
-    ||
-    this.props.ScrollTop !== nextProps.ScrollTop)
+    return (this.props.clientWidth !== nextProps.clientWidth);
   }
 }
 Return.PropTypes={
