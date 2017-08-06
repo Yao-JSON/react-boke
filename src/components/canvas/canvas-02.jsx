@@ -48,6 +48,7 @@ class Canvas02 extends React.Component{
 			minHeight:this.props.clientHeight,
 			position:'relative'
 		};
+		// let clientWidth = this.props.clientWidth;
 		// if(clientWidth < 768){
 		//   return (
 		//     <div className='canvas-02-bgImg' style={{position:'relative'}}>
