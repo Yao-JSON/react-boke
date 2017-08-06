@@ -20,6 +20,14 @@ let NavArr = [
 		link:'contact'
 	}
 ];
+function Cover(props){
+  let me = props.me;
+  if(props.navMenu){
+    return (<div onClick={me.toggleMenu.bind(me)} className='Nav-cover'></div>);
+  }
+  return <i></i>;
+}
+
 class HeaderNav extends React.Component{
 	constructor(props) {
 		super(props);
@@ -39,6 +47,7 @@ class HeaderNav extends React.Component{
 					<NavLeft clientWidth={this.props.clientWidth} />
 					<NavRight clientWidth={this.props.clientWidth} me ={this}/>
 					<Col xs={24} sm={24} className = {classNames('navMenu',{'navMenu-height-150':this.state.navMenu})}>
+            <Cover navMenu={this.state.navMenu} me={this}/>
 						<ul className='menu-item'>{
 							NavArr.map((value,index) => {
 								return (
