@@ -5,9 +5,12 @@ import App from '../container/';
 import Home from '../container/Home';
 import BokeApp from '../container/boke';
 import BokeView from '../container/boke/boke-view';
+import Resume from '../container/Resume';
 import About from '../container/About';
 import Me from '../container/me';
 import NotFound from './NotFound';
+
+
 class RouteMap extends React.Component{
 	constructor(props) {
 	  super(props);
@@ -27,6 +30,7 @@ class RouteMap extends React.Component{
           <Route path='/me(/:name)'>
             <IndexRoute component={Me}/>
           </Route>
+          <Route path='resume' component={Resume}/>
 				</Route>
         <Route path='*' component={NotFound}/>
 			</Router>

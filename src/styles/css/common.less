@@ -34,6 +34,12 @@ html,body {
 .TL{
 	text-align: left;
 }
+.margin-top-overflow{
+  &:before,&:after{
+    display: table;
+    content: ' ';
+  }
+}
 .flex{
   display: flex;
   &-align-items-center{

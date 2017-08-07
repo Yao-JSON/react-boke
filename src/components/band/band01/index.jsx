@@ -15,7 +15,9 @@ class HomeBand01 extends React.Component{
 			<div className='band01-img-div' style={{minHeight:this.props.clientHeight}}>
 				<div className='img'>
 					<img src={bgImg}  className={classnames('img-bg','img-responsive')}/>
-					<ul className={classnames('band01-label',{'band01-font-pc':clientWidth > 768,'band01-font-yd':clientWidth < 768})}>
+					<ul className={classnames('band01-label',{'band01-font-pc':clientWidth > 768,
+            'band01-font-ipad':(clientWidth <= 768 && clientWidth > 420),
+            'band01-font-shouji':clientWidth<=420})}>
 						<li>
               Nothing is impossible
               <i className='iconFont icon-YJSON'></i>

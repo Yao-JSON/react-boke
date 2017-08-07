@@ -37,7 +37,7 @@ let Button = (props) => {
 let NavRight = (props) => {
 	let clientWidth = props.clientWidth;
 	let me = props.me;
-	if(clientWidth <768){
+	if(clientWidth <= 768){
 		return (
 			<Col className='nav-right' sm={8} xs={8}>
 				<Button onClick={() => {

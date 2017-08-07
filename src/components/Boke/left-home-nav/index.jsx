@@ -50,7 +50,7 @@ class PCMenu extends React.Component{
   render(){
     let clientWidth = this.props.clientWidth;
     return(
-      <ul className={classnames('body-nav-title',{'boke-body-YD-title clear':clientWidth<=768})}>
+      <ul className={classnames('body-nav-title',{'boke-body-YD-title clear':!(clientWidth>768)})}>
         {
           navJson.menu.map((value,index) => {
             return (
@@ -99,7 +99,7 @@ class Body extends React.Component{
           {
             <PCMenu clientWidth={clientWidth}/>
           }
-          <ul className={classnames('boke-www-link', 'flex','flex-justify-content-center',{'boke-www-link-li-5px':clientWidth<768})}>
+          <ul className={classnames('boke-www-link', 'flex','flex-justify-content-center',{'boke-www-link-li-5px':!(clientWidth>768)})}>
             {
               navJson.btn_link.map((value , index) => {
                 return (

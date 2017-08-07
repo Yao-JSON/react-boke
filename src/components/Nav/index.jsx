@@ -42,7 +42,7 @@ class HeaderNav extends React.Component{
 	}
 	render(){
 		return (
-			<Grid fluid={true}>
+			<Grid fluid={true} className='nav-top-parent'>
 				<Row className = {classNames('nav',{'nav-border':this.props.clientWidth >768?false:true ,'nav-border2':this.props.ScrollTop>100?true:false})} >
 					<NavLeft clientWidth={this.props.clientWidth} />
 					<NavRight clientWidth={this.props.clientWidth} me ={this}/>

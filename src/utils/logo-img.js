@@ -5,9 +5,15 @@ import NpmLogo from '../images/npm.png';
 import jQueryLogo from '../images/jquery.png';
 import WebpackLogo from '../images/webpack.png';
 import YarnLogo from '../images/yuan.png';
+import WxaLogo from '../images/wxa.png';
 
 module.exports ={
   VueLogo,
   ReactLogo,
-  NodeLogo
+  NodeLogo,
+  NpmLogo,
+  jQueryLogo,
+  WebpackLogo,
+  YarnLogo,
+  WxaLogo
 };

@@ -10,7 +10,7 @@ class Return extends React.Component{
   }
   render(){
       let clientWidth = this.props.clientWidth;
-      if(clientWidth < 768){
+      if(clientWidth <= 768){
         return (
           <div className={classnames('others-Return')} style={{backgroundColor:this.props.bgColor}}>
             <Link to={this.props.link}>
