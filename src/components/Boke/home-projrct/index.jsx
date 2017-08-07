@@ -4,7 +4,7 @@ let { Row , Col } = Grid;
 const Tag = require('uxcore-tag');
 const { Item } = Tag;
 import './index.less';
-import {VueLogo,ReactLogo,NodeLogo } from '../../../utils/logo-img';
+import {VueLogo,ReactLogo,NodeLogo,jQueryLogo } from '../../../utils/logo-img';
 import Icon from 'uxcore-icon';
 let ProjectImg = (props) => {
   if(!props.imgSrc.default){
@@ -38,6 +38,8 @@ class ProjectBar extends React.Component{
           return {imgSrc:ReactLogo,default:false};
         case 'node':
           return{imgSrc:NodeLogo,default:false};
+        case 'jQuery':
+          return{imgSrc:jQueryLogo,default:false};
         default:
           return {imgSrc:this.props.img,default:false};
       }

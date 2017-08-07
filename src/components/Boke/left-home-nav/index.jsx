@@ -92,7 +92,9 @@ class Body extends React.Component{
         </div>
         <div className={classnames('body-nav',{'body-nav-padding-right-15':clientWidth>768})}>
           <div className='body-nav-iocn'>
-            <Icon name='liucheng' />
+            <Link to='/'>
+              <Icon name='liucheng' />
+            </Link>
           </div>
           {
             <PCMenu clientWidth={clientWidth}/>
