@@ -1,11 +1,20 @@
 import React from 'react'
 import classnames from 'classnames';
+import ResumeBookRoot from './resume-book-root';
 import './resume.less';
 
 
 class Resume extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      ImgNode:null
+    }
+  }
+  imgageLoad(){
+    this.setState({
+      ImgNode:this.refs.ResumeBookBackgroundImage
+    });
   }
   render(){
     let clientWidth = this.props.clientWidth;
@@ -13,8 +22,6 @@ class Resume extends React.Component{
     let w,h ,divH,styleBookRoot;
     if(clientWidth > 768){
       divH = clientHeight - 195;
-      w = clientWidth;
-      h = w * 6/9 > divH ? divH :  (w * 6/9 );
       styleBookRoot={
         top:0,
         left:0,
@@ -24,14 +31,11 @@ class Resume extends React.Component{
       }
     }else{
       divH = clientHeight -60;
-      w = clientHeight-100;
-      h = w*6/9;
       styleBookRoot = {
-        backgroundSize:`${w}px ${h}px`,
-        width:divH,
-        height:clientWidth -20,
-        left:clientWidth - 20,
-        top:5
+        width:clientHeight-60,
+        height:clientWidth,
+        padding: '0 5% 0 0',
+        right:-(clientHeight - clientWidth-60)/2
       }
     }
     let styleResume = {
@@ -39,15 +43,18 @@ class Resume extends React.Component{
       height:divH
     };
     return(<div style={styleResume} className={classnames('Resume-component-resume',{'Resume-component-resume-top':clientWidth <= 768})}>
-      <div className={classnames('Resume-book-root',{'Resume-book-root-transform':clientWidth <= 768})} style={styleBookRoot}>
-
+      <div className={classnames('resume-book-container',{'resume-book-container-transform':clientWidth <= 768})} style={styleBookRoot}>
+        <img onLoad={this.imgageLoad.bind(this)}  ref='ResumeBookBackgroundImage'  src="../../images/resume-book.png" />
+        <ResumeBookRoot clientWidth={clientWidth} ImgNode={this.state.ImgNode} />
       </div>
     </div>);
   }
-  shouldComponentUpdate(nextProps){
+  shouldComponentUpdate(nextProps,nextStates){
     return (this.props.clientWidth !== nextProps.clientWidth
       ||
-    this.props.clientHeight !== nextProps.clientHeight);
+      this.props.clientHeight !== nextProps.clientHeight
+      ||
+      this.state.ImgNode !== nextStates.ImgNode);
   }
 }
 Resume.PropTypes = {

@@ -1,18 +1,24 @@
 .Resume-component-resume{
   position: relative;
   z-index: 120;
+  display: flex;
 }
 .Resume-component-resume-top{
   margin-top: 80px;
 }
-.Resume-book-root{
-  background-image: url('../../images/resume-book.png');
-  background-repeat: no-repeat;
-  transition: all 1s ease ;
-  background-position: 50% 50%;
-  position: absolute;
+.resume-book-container-transform{
+  transform: rotate(90deg);
+  transform-origin: center center;
 }
-.Resume-book-root-transform{
-  transform:rotate(90deg);
-  transform-origin: left top;
+
+.resume-book-container{
+  align-self:center;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  img{
+    max-width: 100%;
+    align-self: center;
+  }
 }
