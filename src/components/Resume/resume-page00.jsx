@@ -1,5 +1,6 @@
 import React from 'react'
 import classnames from 'classnames';
+import YJSONME from '../../images/YJSON-me.jpeg';
 class ResumePage00 extends React.Component{
   constructor(props){
     super(props);
@@ -9,7 +10,7 @@ class ResumePage00 extends React.Component{
       <div className='front'>
         <div className='page-root'>
           <div className='book-page01-image-container'>
-            <img className='img-responsive' src="../../images/YJSON-me.jpeg" alt=""/>
+            <img className='img-responsive' src={YJSONME} alt=""/>
           </div>
           <div className='YJSON-init'>
             <h1>姚嘉松</h1>

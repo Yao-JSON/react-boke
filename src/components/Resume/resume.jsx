@@ -1,6 +1,7 @@
 import React from 'react'
 import classnames from 'classnames';
 import ResumeBookRoot from './resume-book-root';
+import RESUMEBOOK from '../../images/resume-book.png';
 import './resume.less';
 
 
@@ -44,7 +45,7 @@ class Resume extends React.Component{
     };
     return(<div style={styleResume} className={classnames('Resume-component-resume',{'Resume-component-resume-top':clientWidth <= 768})}>
       <div className={classnames('resume-book-container',{'resume-book-container-transform':clientWidth <= 768})} style={styleBookRoot}>
-        <img onLoad={this.imgageLoad.bind(this)}  ref='ResumeBookBackgroundImage'  src="../../images/resume-book.png" />
+        <img onLoad={this.imgageLoad.bind(this)}  ref='ResumeBookBackgroundImage'  src={RESUMEBOOK} />
         <ResumeBookRoot clientWidth={clientWidth} ImgNode={this.state.ImgNode} />
       </div>
     </div>);
