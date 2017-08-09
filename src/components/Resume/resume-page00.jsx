@@ -6,7 +6,7 @@ class ResumePage00 extends React.Component{
     super(props);
   }
   render(){
-    return(<div className={classnames(this.props.className,'resume-book-page01')}>
+    return(<div className={classnames(this.props.className,'resume-book-page00')}>
       <div className='front'>
         <div className='page-root'>
           <div className='book-page01-image-container'>

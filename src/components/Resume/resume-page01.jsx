@@ -1,24 +1,25 @@
 import React from 'react';
-import resumeBase from './resume-base.json';
+import resumeBase from './page01/resume-base.json';
 import classnames from 'classnames';
-
+import './page01/page01.less';
+import ResumeSkill from './page01/skill';
 class ResumePage01 extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       zIndex:1,
-      deg:props.deg
+      deg:props.deg || 0
     }
   }
   render(){
-    return(<div className={classnames(this.props.className,'resume-book-page02')} style={{transform:`rotateY(${this.state.deg}deg)`}}>
+    return(<div className={classnames(this.props.className,'resume-book-page01')} style={{transform:`rotateY(${this.state.deg}deg)`}}>
       <div className='front'>
         <div className='page-root'>
-          111front
+          <ResumeSkill />
         </div>
         <div className='page-contral' onClick={() => {
           this.setState({
-            deg:this.props.prevPage(1)
+            deg:this.props.prevPage(0)
           });
         }}>
           <span>Prev</span>
@@ -30,7 +31,7 @@ class ResumePage01 extends React.Component{
             {
               resumeBase.map((value,index) => {
                 if(value.link){
-                  return (<li key={index}>
+                  return (<li key={index.toString()}>
                     <div className='resume-icon-container'>
                       <i className={classnames('iconfont',value.icon)}></i>
                     </div>
@@ -44,7 +45,7 @@ class ResumePage01 extends React.Component{
                     </div>
                   </li>)
                 }
-                return (<li>
+                return (<li key={index.toString()}>
                   <div className='resume-icon-container'>
                     <i className={classnames('iconfont',value.icon)}></i>
                   </div>
@@ -63,7 +64,7 @@ class ResumePage01 extends React.Component{
         </div>
         <div className='page-contral' onClick={() => {
           this.setState({
-            deg:this.props.nextPage(1)
+            deg:this.props.nextPage(0)
           });
         }}>
           <span>next</span>

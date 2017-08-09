@@ -49,15 +49,15 @@ class ResumeBookRoot extends React.Component{
     }
     return (<div className='resume-book-root' style={styleBookRoot}>
       <ResumePage00 className='resume-book-page'/>
-      <ResumePage01 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(1)} />
-      <ResumePage02 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(2)} />
-      <ResumePage03 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(3)} />
-      <ResumePage04 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(4)} />
-      <ResumePage05 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(5)} />
-      <ResumePage06 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(6)} />
-      <ResumePage07 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(7)} />
-      <ResumePage08 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(8)} />
-      <ResumePage09 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(9)} />
+      <ResumePage01 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} />
+      <ResumePage02 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(1)} />
+      <ResumePage03 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(2)} />
+      <ResumePage04 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(3)} />
+      <ResumePage05 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(4)} />
+      <ResumePage06 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(5)} />
+      <ResumePage07 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(6)} />
+      <ResumePage08 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(7)} />
+      <ResumePage09 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(8)} />
       <ResumePage10 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage}/>
     </div>);
   }

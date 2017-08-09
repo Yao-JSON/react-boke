@@ -1,5 +1,6 @@
 [
   {"icon":"icon-xueli","label":"学历","text":"本科"},
+  {"icon":"icon-zhuanye","label":"专业","text":"电子信息科学与技术"},
   {"icon":"icon-jiguan","label":"籍贯","text":"河南信阳"},
   {"icon":"icon-address","label":"现居居住地","text":"杭州"},
   {"icon":"icon-youjian","label":"邮箱","text":"YJSON921305@gmail.com","link":"mailto:YJSON921305@gmail.com"},

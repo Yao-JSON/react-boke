@@ -29,6 +29,10 @@ function getDefaultModules() {
         loader: 'style-loader!css-loader!postcss-loader'
       },
       {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
+      {
         test: /\.sass/,
         loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded&indentedSyntax'
       },

@@ -7,7 +7,6 @@ class ResumePage02 extends React.Component{
       zIndex:1,
       deg:props.deg
     }
-
   }
   render(){
     return(<div className={this.props.className} style={{transform:`rotateY(${this.state.deg}deg)`}}>
