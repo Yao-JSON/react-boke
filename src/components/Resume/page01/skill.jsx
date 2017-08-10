@@ -1,6 +1,5 @@
 import React from 'react'
-import CloudText from './cloud-text';
-//import cloudHtml from './cloud.html';
+import CloudText from './cloud-text-01';
 class Skill extends React.Component{
   constructor(props){
     super(props);

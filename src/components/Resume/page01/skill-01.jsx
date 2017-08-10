@@ -1,7 +1,7 @@
 import React from 'react'
 import skill from './skill.json';
-import utils from '../../../utils';
-import CoudText from './cloud-text';
+import utils from '../../../units';
+import CoudText from './cloud-text-demo';
 let MouseX = 0 ,
   MouseY = 0,
   skillDom = null, // 容器

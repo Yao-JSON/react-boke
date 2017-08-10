@@ -4,7 +4,7 @@ let { Row , Col } = Grid;
 const Tag = require('uxcore-tag');
 const { Item } = Tag;
 import './index.less';
-import {VueLogo,ReactLogo,NodeLogo,jQueryLogo } from '../../../utils/logo-img';
+import {VueLogo,ReactLogo,NodeLogo,jQueryLogo } from '../../../units/logo-img';
 import Icon from 'uxcore-icon';
 let ProjectImg = (props) => {
   if(!props.imgSrc.default){

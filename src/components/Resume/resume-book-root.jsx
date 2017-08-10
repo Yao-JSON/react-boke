@@ -41,15 +41,15 @@ class ResumeBookRoot extends React.Component{
       offsetTop = ImgNode.offsetTop;
       offsetLeft = ImgNode.offsetLeft;
       styleBookRoot={
-        top:offsetTop + 13,
-        height:height - 26,
-        width:width-65,
+        top:offsetTop + 17,
+        height:height - 34,
+        width:width-64,
         left:offsetLeft+32
       }
     }
     return (<div className='resume-book-root' style={styleBookRoot}>
       <ResumePage00 className='resume-book-page'/>
-      <ResumePage01 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} />
+      <ResumePage01 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(0)}/>
       <ResumePage02 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(1)} />
       <ResumePage03 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(2)} />
       <ResumePage04 className='resume-book-page' prevPage={this.prevPage} nextPage={this.nextPage} deg={this.prevPage(3)} />
