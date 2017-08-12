@@ -115,7 +115,12 @@ class App extends React.Component{
     </div>);
   }
   componentDidMount(){
-    setTimeout(() => {
+    let getSkillDOM = setInterval(() => {
+      skillDom = ReactDOM.findDOMNode(this.refs.stage);
+      if(!skillDom.offsetWidth){
+        return;
+      }
+      clearInterval(getSkillDOM);
       skillDom = ReactDOM.findDOMNode(this.refs.stage);
       halfStageW = skillDom.offsetWidth /2;
       halfStageH = skillDom.offsetHeight /2;
@@ -123,11 +128,23 @@ class App extends React.Component{
       size = radius * 2;
       this.sineCosine(0,0,0);
       this.positionAll();
-
       setInterval(() => {
         this.update();
       },60)
     },1000)
+    // setTimeout(() => {
+    //   skillDom = ReactDOM.findDOMNode(this.refs.stage);
+    //   halfStageW = skillDom.offsetWidth /2;
+    //   halfStageH = skillDom.offsetHeight /2;
+    //   radius = skillDom.offsetWidth / 3;
+    //   size = radius * 2;
+    //   this.sineCosine(0,0,0);
+    //   this.positionAll();
+    //
+    //   setInterval(() => {
+    //     this.update();
+    //   },60)
+    // },1000);
   }
   update(){
     let a , b , c = 0;
