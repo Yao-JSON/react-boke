@@ -4,7 +4,7 @@ let { Row , Col } = Grid;
 const Tag = require('uxcore-tag');
 const { Item } = Tag;
 import './index.less';
-import {VueLogo,ReactLogo,NodeLogo,jQueryLogo } from '../../../units/logo-img';
+import {VueLogo,ReactLogo,NodeLogo,jQueryLogo,WxaLogo,YarnLogo,WebpackLogo } from '../../../units/logo-img';
 import Icon from 'uxcore-icon';
 let ProjectImg = (props) => {
   if(!props.imgSrc.default){
@@ -38,8 +38,14 @@ class ProjectBar extends React.Component{
           return {imgSrc:ReactLogo,default:false};
         case 'node':
           return{imgSrc:NodeLogo,default:false};
+        case 'wxa':
+          return{imgSrc:WxaLogo,default:false};
+        case 'yarn':
+          return{imgSrc:YarnLogo,default:false};
+        case 'webpack':
+          return{imgSrc:WebpackLogo,default:false};
         case 'jQuery':
-          return{imgSrc:jQueryLogo,default:false};
+          return{imgSrc:jQueryLogo,default:false};//WxaLogo,YarnLogo,WebpackLogo
         default:
           return {imgSrc:this.props.img,default:false};
       }
@@ -80,14 +86,14 @@ class ProjectBar extends React.Component{
                   <a href={this.props.link} target='_blank'>{this.props.link}</a>
                 </div>
               </li>
-              <li className='project-link clear'>
+              {this.props.demo ?<li className='project-link clear'>
                 <div className='label'>
                   示例：
                 </div>
                 <div className='content'>
                   <a href={this.props.demo} target='_blank'>{this.props.demo}</a>
                 </div>
-              </li>
+              </li>:''}
               <li className='project-label clear'>
                 <div className='label'>标签：</div>
                 <div className='content'>

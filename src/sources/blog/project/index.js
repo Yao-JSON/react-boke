@@ -5,7 +5,7 @@ module.exports = [{
   img:'',
   link:'https://github.com/YaoJSON/vue-qingful-waimai-www',
   label:['vue','webpack','iview'],
-  demo:'#'
+  demo:'https://yaojson.github.io/demo/pifa/'
 },{
   title:'画廊应用',
   time:'2017-04-10',
@@ -13,7 +13,7 @@ module.exports = [{
   img:'react',
   link:'https://github.com/YaoJSON/gallery-by-react',
   label:['react','webpack'],
-  demo:'#'
+  demo:'https://yaojson.github.io/demo/gallery/'
 },{
   title:'redux-example',
   time:'2017-04-08',
@@ -38,4 +38,18 @@ module.exports = [{
   link:'https://github.com/YaoJSON/vue-ele',
   label:['vue','vue-cli','webpack','es6/7','style'],
   demo:'https://yaojson.github.io/demo/ele/'
+},{
+  title:'qingful-app-wxa',
+  time:'2017-03-20',
+  description:'微信小程序 APP 打印',
+  img:'wxa',
+  link:'https://github.com/YaoJSON/qingful-app-wxa',
+  label:['wxa']
+},{
+  title:'qingful-app-wxa',
+  time:'2017-03-20',
+  description:'微信小程序 普通商家店铺',
+  img:'wxa',
+  link:'https://github.com/YaoJSON/duodian-wxa',
+  label:['wxa']
 }];
