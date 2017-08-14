@@ -80,6 +80,14 @@ class ProjectBar extends React.Component{
                   <a href={this.props.link} target='_blank'>{this.props.link}</a>
                 </div>
               </li>
+              <li className='project-link clear'>
+                <div className='label'>
+                  示例：
+                </div>
+                <div className='content'>
+                  <a href={this.props.demo} target='_blank'>{this.props.demo}</a>
+                </div>
+              </li>
               <li className='project-label clear'>
                 <div className='label'>标签：</div>
                 <div className='content'>
