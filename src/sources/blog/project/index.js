@@ -15,7 +15,7 @@ module.exports = [
     img:'react',
     link:'https://github.com/YaoJSON/gallery-by-react',
     label:['react','webpack'],
-    demo:'https://yaojson.github.io/demo/gallery/'
+    demo:'https://yao-json.github.io/demo/gallery/'
   },
   {
     title:'redux-example',
@@ -33,7 +33,7 @@ module.exports = [
   //   img:'node',
   //   link:'https://github.com/YaoJSON/qingful-pifa-api',
   //   label:['node','knexJS','webpack','koahub','mocha'],
-  //   demo:'https://yaojson.github.io/demo/api/pifa/apidoc/'
+  //   demo:'https://yao-json.github.io/demo/api/pifa/apidoc/'
   // },
   {
     title:'Vue.js高仿饿了么',
@@ -42,7 +42,16 @@ module.exports = [
     img:'vue',
     link:'https://github.com/YaoJSON/vue-ele',
     label:['vue','vue-cli','webpack','es6/7','style'],
-    demo:'https://yaojson.github.io/demo/ele/'
+    demo:'https://yao-json.github.io/demo/ele/'
+  },
+  {
+    title:'Vue.js高仿饿了么后台管理页面',
+    time:'2017-03-21',
+    description:'Vue.js高仿饿了么外卖App课程源码',
+    img:'vue',
+    link:'https://github.com/YaoJSON/vue-ele',
+    label:['vue','vue-cli','webpack','es6/7','style'],
+    demo:'https://yao-json.github.io/demo/ele-admin/'
   }
   //,
   // {
