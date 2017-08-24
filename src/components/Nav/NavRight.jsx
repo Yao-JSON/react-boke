@@ -15,12 +15,21 @@ let navArr = [
 	{
 		title:'联系我',
 		link:'me'
-	}
+	},
+  {
+    title:'返回旧版',
+    link:'/demo/gallery/',
+    target:'_blank'
+  }
 ];
 let NavList = navArr.map((vaule,index) => {
 	return (
 		<li key={index} className="lt navbar-li">
-			<Link to={vaule.link}>{vaule.title}</Link>
+      {
+        vaule.target?
+          <a href="https://yao-json.github.io/demo/old-boke/" target={vaule.target}>{vaule.title}</a>:
+          <Link to={vaule.link}>{vaule.title}</Link>
+      }
 		</li>
 	);
 });
@@ -32,7 +41,7 @@ let Button = (props) => {
 	    	<span className="icon-bar"></span>
 	    </button>
 	);
-}
+};
 
 let NavRight = (props) => {
 	let clientWidth = props.clientWidth;
