@@ -69,6 +69,7 @@ let mapDispatchProps = (dispatch) => {
 	};
 }
 let mapStateToProps = (state) => {
+  console.log(state);
 	return state;
 }
 
